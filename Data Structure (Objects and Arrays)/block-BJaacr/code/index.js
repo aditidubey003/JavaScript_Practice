@@ -30,48 +30,68 @@ for(let house of got.houses){
 }
 
 // 4. Log the name of all the people in house Starks (index 0) one by one
-for(let house of got.houses[0].name){
-  console.log(house.name)
+for(let person of got.houses[0].people){
+  console.log(person.name)
 }
 
 // 5. Log the name of all the people in house Lannisters (index 1) one by one
-
+for(let person of got.houses[1].people){
+  console.log(person.name)
+}
 
 
 // 6. Log the description of all the people in house Lannisters (index 1) one by one
-
+for (let detail of got.houses[1].people){
+  console.log(detail.description)
+}
 
 // 7. Log the name and description of all the people in house Lannisters (index 1) one by one like `I am [name] and my bio is [description]`
-
-
+for (let house of got.houses[1].people){
+  console.log(`I am ${house.name} and my bio is ${house.description}`)
+}
 
 // 8. Log the name and description of all the people in house Starks (index 0) one by one like `I am [name] and my bio is [description]`
-
-
+for (let house of got.houses[0].people){
+  console.log(`I am ${house.name} and my bio is ${house.description}`)
+}
 
 // 9. Log the name and description of the people in house Starks whose name is `Robb Stark`
-
+for(let person of got.houses[0].people){
+  if (person.name === "Robb Stark"){
+    console.log(person.name, person.description)
+  }
+}
 
 
 // 10. Log the name and description of the people in house Lannisters whose name is `Tywin Lannister`
-
+for(let person of got.houses[1].people){
+  if (person.name === "Tywin Lannister"){
+    console.log(person.name, person.description)
+  }
+}
 
 // 11. Push the name of the houses in an array named `houseNames` and Log the array
-
+let houseName = [];
+for(let house of got.houses){
+  houseName.push(house.name)
+}
+console.log(houseName)
 
 // 12. Log the size of people in Starks house
-
+console.log(got.houses[0].people.length)
 
 // 13. Log the size of people in Lannisters house
-
+console.log(got.houses[1].people.length)
 
 // 14. Add the name and size of people in an object like {Starks: 4, Lannisters: 6} and log the object
-
+let Game = {};
 
 
 
 // 15. Log the name of all the people of all the houses in got one by one
-
+for (let house of got.houses[0].people){
+  console.log(house.name)
+}
 
 
 // 16. Push all names into a new array named `allPeople` and log the value array.
