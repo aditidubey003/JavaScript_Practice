@@ -10,13 +10,13 @@ let person2 = person;
 
 person.firstName = "Arya";
 
-console.log(person2.firstName); // 
-console.log(person.firstName); // 
-console.log(person.lastName); // 
-console.log(person == person2); // 
-console.log(person === person2); // 
-console.log(person.lastName === person2.lastName); // 
-
+console.log(person2.firstName); // "Arya"
+console.log(person.firstName); // "Arya"
+console.log(person.lastName); // "Doe"
+console.log(person == person2); // True
+console.log(person === person2); // True
+console.log(person.lastName === person2.lastName); // True
+// Because We have copied the value of person in person2 by copy by reference.
 ```
 
 2. Write the output with reason:
@@ -38,17 +38,17 @@ let personTwo = { ...person };
 person.firstName = "Arya";
 person.city = "Navada";
 
-console.log(personTwo.firstName); // 
-console.log(person.firstName); // 
-console.log(personTwo.lastName); // 
-console.log(person.firstName === personTwo.firstName); // 
-console.log(person == personTwo); // 
-console.log(person === personTwo); //
-console.log(person.address === personTwo.address); // 
-console.log(person.address == personTwo.address); // 
-console.log(personTwo.address.city); // 
-console.log(person.address.city); //
-console.log(person.address.city == personTwo.address.city); // 
+console.log(personTwo.firstName); // "John"
+console.log(person.firstName); // "Arya"
+console.log(personTwo.lastName); // "Doe"
+console.log(person.firstName === personTwo.firstName); // False
+console.log(person == personTwo); // False
+console.log(person === personTwo); // False
+console.log(person.address === personTwo.address); // True
+console.log(person.address == personTwo.address); // True
+console.log(personTwo.address.city); // "Navada"
+console.log(person.address.city); // "Navada"
+console.log(person.address.city == personTwo.address.city); // True
 
 ```
 
@@ -71,17 +71,17 @@ let personTwo = { ...person, address: { ...person.address } };
 person.firstName = "Arya";
 person.city = "Navada";
 
-console.log(personTwo.firstName); // 
-console.log(person.firstName); // 
-console.log(personTwo.lastName); // 
-console.log(person.firstName === personTwo.firstName); // 
-console.log(person == personTwo); // 
-console.log(person === personTwo); // 
-console.log(person.address === personTwo.address); // 
-console.log(person.address == personTwo.address); // 
-console.log(personTwo.address.city); //
-console.log(person.address.city); //
-console.log(person.address.city == personTwo.address.city); // 
+console.log(personTwo.firstName); // "John"
+console.log(person.firstName); // "Arya"
+console.log(personTwo.lastName); // "Doe"
+console.log(person.firstName === personTwo.firstName); // False
+console.log(person == personTwo); // False
+console.log(person === personTwo); // False
+console.log(person.address === personTwo.address); // False
+console.log(person.address == personTwo.address); // False
+console.log(personTwo.address.city); // "San Jose"
+console.log(person.address.city); // "Navada"
+console.log(person.address.city == personTwo.address.city); // False
 ```
 
 4. Clone the `blogs` variable into a new variable named `clonedBlogs`
@@ -105,6 +105,11 @@ let blogs = [
   },
 ];
 
+let clonedBlogs = [
+  {...blogs[0]}
+  {...blogs[1]}
+  {...blogs[2]}
+];
 
 ```
 
@@ -130,6 +135,15 @@ var questions = [
   },
 ];
 
+
+let questionClone = [
+  {...questions[0], 
+  responses: [question[0].responses]
+  }
+  {...questions[1], 
+  responses: [question[1].responses]
+  }
+]
 
 ```
 
@@ -157,6 +171,16 @@ var allBlogs = {
   ],
 };
 
+let allBlogsClone = {
+  ...allBlogs, 
+  author: {
+    ...allBlogs.author
+  }, 
+  comments: [
+    {...allBlogs.comments[0]},
+    {...allBlogs.comments[1]},
+  ]
+}
 
 ```
 
@@ -190,7 +214,7 @@ let person = [
   },
 ];
 
-
+let clonedPerson = JSON.parse(JSON.stringify(person));
 ```
 
 8. Write a function named `cloneObject` that accepts an object and returns the clone of the object
@@ -218,7 +242,7 @@ let person = {
   },
 };
 
-let clonedPerson = cloneObject(user);
+let clonedPerson = cloneObject(person);
 
 console.log(
   `The user object is ${
@@ -230,4 +254,10 @@ console.log(
     person == clonedPerson ? `not clone` : `cloned successfully 😁👑`
   }`
 );
+
+function cloneObject (object){
+  return JSON.parse(JSON.stringify(object));
+}
+
+
 ```
