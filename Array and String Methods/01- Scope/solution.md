@@ -125,7 +125,7 @@ function first() {
 
 console.log(first());
 
-
+// undefined
 
 // What will be the output of the following code with reason (write the error message if any)
 function first() {
@@ -139,7 +139,7 @@ function first() {
 
 console.log(first());
 
-
+// undefined
 
 
 // What will be the output of the following code with reason (write the error message if any)
@@ -154,6 +154,7 @@ function first() {
 
 console.log(first());
 
+// undefined
 
 
 // What will be the output of the following code with reason (write the error message if any)
@@ -168,7 +169,7 @@ function first() {
 
 console.log(first());
 
-
+// 3
 
 // What will be the output of the following code with reason (write the error message if any)
 function first() {
@@ -183,7 +184,7 @@ function first() {
 
 console.log(first());
 
-
+// 102
 
 // What will be the output of the following code with reason (write the error message if any)
 let three = 300;
@@ -200,7 +201,7 @@ function first() {
 
 console.log(first());
 
-
+// 105
 
 // What will be the output of the following code with reason (write the error message if any)
 let three = 300;
@@ -215,3 +216,5 @@ function first() {
 }
 
 console.log(first());
+
+// 402
