@@ -4,18 +4,26 @@
   Create a function named addTwo which accepts a number, adds 2 to the number and return the new value.
 */
 
-
-
+function addTwo(num){
+  return num + 2;
+}
+console.log(addTwo(5))
 /*
   Create a function named addThree which accepts a number, adds 3 to the number and return the new value.
 */
-
+function addThree(num){
+  return num + 3;
+}
+console.log(addThree(5))
 
 
 /*
   Create a function named addFive which accepts a number, adds 5 to the number and return the new value.
 */
-
+function addFive(num){
+  return num + 5;
+}
+console.log(addFive(5))
 
 
 /*
@@ -25,25 +33,53 @@
     - While doing so use the funciton addTwo
 */
 
+function addTwoToArray(arr){
+  let newArray = [];
+  for (let num of arr){
+     newArray.push(addTwo(num))
+   }
+  return newArray;
+}
 
 
-/*
+ let arr1 = [1, 3, 4, 6, 16, 91];
+
+console.log(addTwoToArray(arr1))
+/* 
   Create a function named addThreeToArray which accepts:
     - an array of numbers
-    - aeturns a new array where 2 is added to each element
+    - aeturns a new array where 3 is added to each element
     - while doing so use the funciton addThree
 */
 
+function addThreeToArray (arr){
+  let newArray = [];
+  for (let num of arr){
+     newArray.push(addThree(num))
+   }
+  return newArray;
+}
+let arr2 = [1, 6, 4, 6, 16, 91];
 
+console.log(addThreeToArray(arr2))
 
 /*
   Create a function named addFiveToArray which accepts:
     - an array of numbers
-    - aeturns a new array where 2 is added to each element
+    - aeturns a new array where 5 is added to each element
     - while doing so use the funciton addThree
 */
 
+function addFiveToArray (arr){
+  let newArray = [];
+  for (let num of arr){
+     newArray.push(addFive(num))
+   }
+  return newArray;
+}
+let arr3 = [1, 6, 4, 6, 16, 91];
 
+console.log(addFiveToArray(arr2))
 
 /*
 In above function addTwoToArray, addThreeToArray, addFiveToArray we are repeating the code, let's fix this.
