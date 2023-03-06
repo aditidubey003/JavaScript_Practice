@@ -261,6 +261,7 @@ function isFemale(personDetails){
 console.log(isFemale(grades[0])); // false
 console.log(isFemale(grades[1])); // true
 console.log(isFemale(grades[2])); // false
+
 /*
   Create a function named isGradeA which accepts:
     - an object
@@ -291,11 +292,12 @@ console.log(isGradeA(grades[2])); // true
 */
 
 function isGradeB(personDetails){
-return personDetails.grade > 8 || personDetails <= 12;
+return personDetails.grade > 8 
+&& personDetails.grade <= 12;
 }
 
 
-console.log(isGradeB(grades[0])); // true
+console.log(isGradeB(grades[0])); // false
 console.log(isGradeB(grades[1])); // true
 console.log(isGradeB(grades[2])); // false
 
@@ -310,8 +312,12 @@ console.log(isGradeB(grades[2])); // false
     console.log(isGradeC(grades[2])); // false
 */
 
-
-
+function isGradeC(personDetails){
+  return personDetails.grade <= 8 
+}
+console.log(isGradeC(grades[0]));// true
+console.log(isGradeC(grades[1]));// false
+console.log(isGradeC(grades[2]));// false
 /*
   Create a function named filterAdult which accepts:
     - an array of objects
@@ -327,9 +333,17 @@ console.log(isGradeB(grades[2])); // false
       { name: 'Liam Smith', age: 20 },
     ];
 */
+function filterAdult(arr){
+let final = [];
+for(let person of arr){
+ if(isAdult(person)){
+  final.push(person);
+ }
+}
+return final;
+}
 
-
-
+console.log(filterAdult(people));
 /*
   Create a function named filterMale which accepts:
     - an array of objects
@@ -348,9 +362,17 @@ console.log(isGradeB(grades[2])); // false
       { name: 'Donald', grade: 5, sex: 'M' },
     ];
 */
+function filterMale(arr){
+  let final = [];
+  for(let person of arr){
+   if(isMale(person)){
+    final.push(person);
+   }
+  }
+  return final;
+  }
 
-
-
+  console.log(filterMale(grades));
 /*
   Create a function named filterFemale which accepts:
     - an array of objects
@@ -370,7 +392,17 @@ console.log(isGradeB(grades[2])); // false
     ]
 */
 
+function filterFemale(arr){
+  let final = [];
+  for(let person of arr){
+    if(isFemale(person)){
+      final.push(person);
+    }
+  }
+  return final;
+}
 
+console.log(filterFemale(grades));
 /*
   Create a function named filterGradeA which accepts:
     - an array of objects
@@ -391,6 +423,17 @@ console.log(isGradeB(grades[2])); // false
     ]
 */
 
+function filterGradeA(arr){
+  let final= [];
+  for(let person of arr){
+    if(isGradeA(person)){
+      final.push(person);
+    }
+  }
+  return final;
+}
+
+console.log(filterGradeA(grades));
 
 
 /*
@@ -412,7 +455,17 @@ console.log(isGradeB(grades[2])); // false
     ]
 */
 
+function filterGradeB(arr){
+  let final= [];
+  for(let person of arr){
+    if(isGradeB(person)){
+      final.push(person);
+    }
+  }
+  return final;
+}
 
+console.log(filterGradeB(grades));
 
 /*
   Create a function named filterGradeC which accepts:
@@ -431,8 +484,17 @@ console.log(isGradeB(grades[2])); // false
       { name: 'Donald', grade: 5, sex: 'M' },
     ]
 */
+function filterGradeC(arr){
+  let final= [];
+  for(let person of arr){
+    if(isGradeC(person)){
+      final.push(person);
+    }
+  }
+  return final;
+}
 
-
+console.log(filterGradeC(grades));
 
 /*
 We are repeating lots of code in above functions like filterGradeC, filterGradeB, filterGradeA, filterAdult. We will fix
@@ -454,7 +516,10 @@ filter is a higher order function.
     console.log(filter(grades, isGradeB));
     console.log(filter(grades, isGradeC));
 */
+/*function filter (arr, cb){
+  let final = [];
 
+}
 
 /*
   Create a function named multiplyBy which accepts:
