@@ -120,22 +120,39 @@ console.log(changeArray([1, 2, 3, 4, 5, 6], addFive)); // [6, 7, 8, 9, 10, 11]
     console.log(sendMessage("Hello Prompt!", prompt));
 */
 
+  function sendMessage (string, cb){
+   return cb(string)
+  }
 
-
+  console.log(sendMessage("Hello", console.log));
+  console.log(sendMessage("Hello Alert!", alert));
+  console.log(sendMessage("Hello Prompt!", prompt));
 /*
 
  Create a function named `first` that accepts an argument a function (callback) and return the same function defination.
 
 */
+function first (cb){
+return addFive;
+}
 
-
+console.log(addFive);
 /*
  Create a function named `second`
   - Inside second create another function named `third` which accepts a number, adds 1 to it and returns it
   - Return the function defination (third) from the second function
   - Also write the required code to call the function
+*/
 
+  function second (){
+    function third(num){
+      return num + 1;
+    }
+    return third;
+  }
 
+ let value = second();
+ console.group(value)
 /*
  Write a function named `callMe` which 
   - accept a function (callback function) as argument.
@@ -143,6 +160,7 @@ console.log(changeArray([1, 2, 3, 4, 5, 6], addFive)); // [6, 7, 8, 9, 10, 11]
   - return final varibale from the function.
   - also write the required code to call the function.
 */
+
 
 
 
