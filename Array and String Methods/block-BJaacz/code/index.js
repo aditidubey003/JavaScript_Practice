@@ -161,12 +161,37 @@ console.log(addFive);
   - also write the required code to call the function.
 */
 
+function callMe (cb){
+let final = cb();
+return final;
+}
+
+let Output = callMe(function(){
+  return 21;
+})
+console.log(Output);
 
 
 
 // Data Starts (Don't change this)
-
-
+const people = [
+  { name: 'John Doe', age: 16 },
+  { name: 'Thomas Calls', age: 19 },
+  { name: 'Liam Smith', age: 20 },
+  { name: 'Jessy Pinkman', age: 18 },
+];
+const grades = [
+  { name: 'John', grade: 8, sex: 'M' },
+  { name: 'Sarah', grade: 12, sex: 'F' },
+  { name: 'Bob', grade: 16, sex: 'M' },
+  { name: 'Johnny', grade: 2, sex: 'M' },
+  { name: 'Ethan', grade: 4, sex: 'M' },
+  { name: 'Paula', grade: 18, sex: 'F' },
+  { name: 'Donald', grade: 5, sex: 'M' },
+  { name: 'Jennifer', grade: 13, sex: 'F' },
+  { name: 'Courtney', grade: 15, sex: 'F' },
+  { name: 'Jane', grade: 9, sex: 'F' },
+];
 // Data Ends
 
 /*
@@ -180,8 +205,26 @@ console.log(addFive);
     console.log(isAdult(people[2])); // true
 */
 
+// Need to correct this 
+/*
+function isAdult (obj){
+  for(let details of obj){
+    if (details.age > 18){
+     return true;
+    } else {
+      return false;
+    }
+  }
+}
+*/
 
+function isAdult (personDetails){
+  return personDetails.age > 18;
+ }
 
+console.log(isAdult(people[0])); // false
+console.log(isAdult(people[1])); // true
+console.log(isAdult(people[2])); // true
 /*
   Create a function named isMale which accepts:
     - an object
@@ -194,7 +237,13 @@ console.log(addFive);
 */
 
 
+function isMale (personDetails){
+return personDetails.sex === 'M';
+}
 
+console.log(isMale(grades[0])); // true
+console.log(isMale(grades[1])); // false
+console.log(isMale(grades[2])); // true
 /*
   Create a function named isFemale which accepts:
     - an object
@@ -206,8 +255,12 @@ console.log(addFive);
     console.log(isFemale(grades[2])); // false
 */
 
-
-
+function isFemale(personDetails){
+  return personDetails.sex === 'F'; 
+}
+console.log(isFemale(grades[0])); // false
+console.log(isFemale(grades[1])); // true
+console.log(isFemale(grades[2])); // false
 /*
   Create a function named isGradeA which accepts:
     - an object
@@ -218,7 +271,12 @@ console.log(addFive);
     console.log(isGradeA(grades[1])); // false
     console.log(isGradeA(grades[2])); // true
 */
-
+function isGradeA (personDetails){
+  return personDetails.grade > 12;
+ }
+console.log(isGradeA(grades[0])); // false
+console.log(isGradeA(grades[1])); // false
+console.log(isGradeA(grades[2])); // true
 
 
 /*
@@ -232,7 +290,14 @@ console.log(addFive);
     console.log(isGradeB(grades[2])); // false
 */
 
+function isGradeB(personDetails){
+return personDetails.grade > 8 || personDetails <= 12;
+}
 
+
+console.log(isGradeB(grades[0])); // true
+console.log(isGradeB(grades[1])); // true
+console.log(isGradeB(grades[2])); // false
 
 /*
   Create a function named isGradeC which accepts:
