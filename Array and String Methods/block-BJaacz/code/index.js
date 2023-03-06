@@ -516,11 +516,23 @@ filter is a higher order function.
     console.log(filter(grades, isGradeB));
     console.log(filter(grades, isGradeC));
 */
-/*function filter (arr, cb){
+function filter (arr, cb){
   let final = [];
-
+  for(let person of arr){
+    if(cb(person)){
+      final.push(person);
+    }
+  }
+  return final;
 }
 
+
+console.log(filter(people, isAdult));
+console.log(filter(grades, isMale));
+console.log(filter(grades, isFemale));
+console.log(filter(grades, isGradeA));
+console.log(filter(grades, isGradeB));
+console.log(filter(grades, isGradeC));
 /*
   Create a function named multiplyBy which accepts:
     - a number (num)
@@ -540,3 +552,18 @@ filter is a higher order function.
     console.log(multiplyByNine(5)); // 45
 */
 
+function multiplyBy (num){
+  return function (num2){
+    return num * num2;
+  }
+}
+let multiplyByFive = multiplyBy(5);
+
+console.log(multiplyByFive(10)); // 50
+console.log(multiplyByFive(20)); // 100
+console.log(multiplyByFive(5)); // 25
+
+let multiplyByNine = multiplyBy(9);
+console.log(multiplyByNine(10)); // 90
+console.log(multiplyByNine(20)); // 180
+console.log(multiplyByNine(5)); // 45
