@@ -1,11 +1,9 @@
 let message = 'If you are still thinking the answer is no!';
 
 // Log the length of the variable message like `The length of [message] is [length]`
-
-
+console.log(`The length of ${message} is ${message.length}`)
 
 // Log the character at index 0 of the variable message like `The first character of [message] is [character]`
-
 
 
 // Log the last character of message using length like `The last character of [message] is [character]`
@@ -20,9 +18,7 @@ let message = 'If you are still thinking the answer is no!';
 // Log the index of word "answers" in message
 
 
-
 // Log true or false based on whether the word "answers" exist in message or not
-
 
 
 // Log true or false based on whether the word "they" exist in message or not
