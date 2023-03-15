@@ -9,13 +9,13 @@ console.log(message.charAt(0));
 // Log the last character of message using length like `The last character of [message] is [character]`
 console.log(message.charAt(message.length - 1));
 
-// Log the index of word "you" in message
+// Log the index of word "you" in message.
 console.log(message.indexOf('you'));
 
-// Log the index of word "still" in message
+// Log the index of word "still" in message.
 console.log(message.indexOf('still'));
 
-// Log the index of word "answers" in message
+// Log the index of word "answers" in message.
 console.log(message.indexOf("answers"));
 // The word "answers" is not present in the sentence that's why it is showing the negative index.
 
@@ -25,6 +25,7 @@ console.log(message.includes("answers"));
  // Another Method
 console.log(message.indexOf("answers") !== -1);
 */
+
 // Log true or false based on whether the word "they" exist in message or not
 console.log(message.includes("they"));
 
@@ -69,7 +70,6 @@ console.log(variable);
 for(let characters of message){
     console.log(characters);
 }
-
 
 // Split all the words in message (split by " " space) and store it in a variable messageArray
 let messageArray = message.split(" ");
