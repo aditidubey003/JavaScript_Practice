@@ -41,30 +41,36 @@ if (fruits[0] === 'Dragon Fruit' && fruits[1] === 'Guava'){
 }
 
 // Update the value of index 1 to `Pears`
-
-
+fruits.splice(0, 1, 'Pears')
+// At the Index 0, Deleted 1 Element and replaced with the Pears.
 
 // Add the 'Kiwi' and 'Lemon' to the index 1 and 2 and shift the other element to next index (use splice to add element)
-
-
+fruits.splice(1, 0, 'Kiwi', 'Lemon');
 
 // Remove (slice) all the element from index 5
-
+console.log(fruits.slice(5));
 
 // Create another array named moreFruits with values ['Berries', 'Melons']
 
-
+ let moreFruits = ['Berries', 'Melons'];
 
 // Concat moreFruits into fruits array (re-assign so the value gets updated)
-
+// Concat always returns the new array so we always need to reassign the the new value to the fruits.
+fruits = fruits.concat(moreFruits);
+ console.log(fruits);
 
 // Log the name of all fruit in console
-
+for (let i = 0; i < fruits.length; i++){
+    const fruit = fruits[i];
+        console.log(fruit);
+}
 
 // Convert each fruit name to lowercase and log it
 
-
-
+for (let i = 0; i < fruits.length; i++){
+    const fruit = fruits[i];
+        console.log(fruit);
+}
 // Convert all fruits name into lowercase and store in new array named lowercaseFruits
 
 
