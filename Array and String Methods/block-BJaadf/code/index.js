@@ -67,10 +67,16 @@ for (let i = 0; i < fruits.length; i++){
 
 // Convert each fruit name to lowercase and log it
 
-for (let i = 0; i < fruits.length; i++){
+/*for (let i = 0; i < fruits.length; i++){
     const fruit = fruits[i];
         console.log(fruit);
-}
+}*/
+
+fruits.forEach(forEachFruit);
+
+ function forEachFruit (fruits){
+  fruits.toLowercase();
+ }
 // Convert all fruits name into lowercase and store in new array named lowercaseFruits
 
 
