@@ -1,4 +1,4 @@
-let fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
+var fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
 
 // Add a new element ('Papaya') into fruits array at end
 fruits.push('Papaya');
@@ -52,7 +52,7 @@ console.log(fruits.slice(5));
 
 // Create another array named moreFruits with values ['Berries', 'Melons']
 
- let moreFruits = ['Berries', 'Melons'];
+ var moreFruits = ['Berries', 'Melons'];
 
 // Concat moreFruits into fruits array (re-assign so the value gets updated)
 // Concat always returns the new array so we always need to reassign the the new value to the fruits.
@@ -60,14 +60,13 @@ fruits = fruits.concat(moreFruits);
  console.log(fruits);
 
 // Log the name of all fruit in console
-for (let i = 0; i < fruits.length; i++){
+for (var i = 0; i < fruits.length; i++){
     const fruit = fruits[i];
         console.log(fruit);
 }
-
 // Convert each fruit name to lowercase and log it
 
-/*for (let i = 0; i < fruits.length; i++){
+/*for (var i = 0; i < fruits.length; i++){
     const fruit = fruits[i];
         console.log(fruit);
 }*/
@@ -138,4 +137,7 @@ fruits.forEach(forEachFruit);
 
 
 // Join all fruits with '&', convert to lowercase and log it
+
+
+
 
