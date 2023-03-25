@@ -60,32 +60,26 @@ fruits = fruits.concat(moreFruits);
  console.log(fruits);
 
 // Log the name of all fruit in console
-// fruits.forEach((fruit) => Console.log(fruit));
-
-// Other Method 
-for(let i = 0; i < fruits.length; i++){
-    let fruit = fruits[i];
-    Console.log(fruit);
-}
+ fruits.forEach((fruit) => console.log(fruit));
 
 // other METhod 
-/*fruits.forEach();
-function (fruit){
+/*fruits.forEach(allFruits);
+function allFruits(fruit){
 console.log(fruit );
 }*/
-// Convert each fruit name to lowercase and log it
 
-// fruits.forEach((fruit) => Console.log(fruit.toLowerCase));
- 
+// Other Method 
+/*fruits.forEach(function allFruits(fruit){
+    console.log(fruit );
+})*/
 
 // Convert all fruits name into lowercase and store in new array named lowercaseFruits
-
-
-    
+let lowercaseFruits =  fruits.map((fruit) => fruit.toLowerCase());
+console.log(lowercaseFruits);
 
 // Convert all fruits name into uppercase and store in new array named uppercaseFruits
-
-
+let uppercaseFruits =  fruits.map((fruits) => fruits.toUpperCase());
+console.log(uppercaseFruits);
 
 // Convert the numbers array to one level element. Remove sub-arrays to individual elements and log them
 
