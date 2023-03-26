@@ -7,20 +7,17 @@ let to = 'Arya Stark';
 /*
 1. Find the index of the first 'is' in the variable quote. And store it in a new variable named indexOfIs
 */
-
-
-
+let indexOfIs =  quote.indexOf('is');
+console.log(indexOfIs);
 /*
 2. Find the character at the index indexOfIs (Problem 1) in quote.
 */
-
-
+console.log(quote.charAt(indexOfIs));
 
 /*
 3. Log the message saying `The index of first is in quote is 7`
 */
-
-
+ console.log(`The index of the first is in quote is ${quote.indexOf('i')}`)
 
 /*
 4. Log the message for first 6 characters of quote like this.
@@ -32,7 +29,9 @@ let to = 'Arya Stark';
   The character at index 5 is ' '
 */
 
-
+for(let i = 0; i < 6; i++){
+  console.log(`The character at index ${i} is ${quote[i]}`);
+}
 
 /*
 5. Using the variable from , to and quote variable dispaly this message
