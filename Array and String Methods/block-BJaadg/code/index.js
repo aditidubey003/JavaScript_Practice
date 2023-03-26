@@ -75,6 +75,7 @@ console.log(quoteSplitted);
 /*
 11. Change the word "today" in quoteSplitted to "tomorrow" and join all the words to form a sentance.
 */
+// tricky question 
 // quoteSplitted.replace("today", "tomorrow");
 // console.log(quoteSplitted);
 
