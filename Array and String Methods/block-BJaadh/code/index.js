@@ -6,39 +6,45 @@ var strings = ['This', 'is', 'a', 'collection', 'of', 'words'];
 NOTE:
 While using methods like push, pop, sort etc it mutates the original array.
 
-
-
 Clone the array before using sort method: [...arr]
 
 */
-
 
 // - Find the index of `101` in numbers
 console.log(numbers.indexOf(101));
 
 
 // - Find the last index of `9` in numbers
+console.log(numbers.lastIndexOf(9));
 
 
 // - Convert value of strings array into a sentance like "This is a collection of words"
-
+console.log(strings.join(" "));
 
 
 // - Add two new words in the strings array "called" and "sentance"
+strings.push("called", "Sentence");
+console.log(strings);
 
-
+// For Adding in the beginning 
+// console.log(strings.splice(0, 0,"called", "Sentence" ))
 
 // - Again convert the updated array (strings) into sentance like "This is a collection of words called sentance"
-
+ console.log(strings.join(" "));
 
 // - Remove the first word in the array (strings)
-
+console.log(strings.unshift());
+// Other Method
+//strings.slice(0, 1)
 
 // - Find all the words that contain 'is' use string method 'includes'
-  
-
+strings.filter((string) => {
+  return strings.includes("is");
+})
 
 // - Find all the words that contain 'is' use string method 'indexOf'
+
+
 
 
 
