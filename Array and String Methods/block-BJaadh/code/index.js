@@ -38,31 +38,48 @@ console.log(strings.unshift());
 //strings.slice(0, 1)
 
 // - Find all the words that contain 'is' use string method 'includes'
-strings.filter((string) => {
-  return strings.includes("is");
-})
-
+let allIs = strings.filter((string) => 
+  string.includes("is")
+)
+console.log(allIs);
 // - Find all the words that contain 'is' use string method 'indexOf'
 
-
-
+// We have written indexOf !== -1, because if it does not found the particular character it returns -1.
+let allIs1 = strings.filter((string) => 
+  string.indexOf("is") !== -1
+)
+console.log(allIs1);
 
 
 // - Check if all the numbers in numbers array are divisible by three use array method (every)
 
-
+let divisibleByThree = numbers.every((num) => {
+  num % 3 === 0
+}
+)
+console.log(divisibleByThree);
 
 // -  Sort Array from smallest to largest
+let ascending = numbers.sort((a, b) => {
+  return a - b 
+}
+)
+console.log(ascending);
 
-
+// Descending 
+/*let descending = numbers.sort((a, b) => {
+  return b - a
+}
+)
+console.log(descending);
+*/
 
 // - Remove the last word in strings
-
-
+console.log(strings.pop());
 
 // - Find largest number in numbers
-
-
+ let largest = numbers.sort((a, b) => a - b).pop()
+console.log(largest);
 // - Find longest string in strings
 
 
