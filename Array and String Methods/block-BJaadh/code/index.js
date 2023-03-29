@@ -81,19 +81,26 @@ console.log(strings.pop());
  let largest = numbers.sort((a, b) => a - b).pop()
 console.log(largest);
 // - Find longest string in strings
-
-
+// Firstly short the Array , then find the last one by pop
+let longestString = strings.sort((a, b) => a.length - b.length).pop()
+console.log(longestString)
 
 // - Find all the even numbers
-
-
+let evenNum = numbers.filter((num) => 
+num % 2 === 0
+)
+console.log(evenNum)
 
 // - Find all the odd numbers
-
+let oddNum = numbers.filter((num) => 
+num % 2 === !0
+)
+console.log(oddNum)
 
 
 // - Place a new word at the start of the array use (unshift)
-
+strings.unshift("Aditi");
+console.log(strings)
 
 // - Make a subset of numbers array [18,9,7,11]
 
@@ -103,7 +110,6 @@ console.log(largest);
 
 
 // - Replace 12 & 18 with 1221 and 1881
-
 
 
 // - Replace words in strings array with the length of the word
