@@ -60,7 +60,7 @@ let divisibleByThree = numbers.every((num) => {
 console.log(divisibleByThree);
 
 // -  Sort Array from smallest to largest
-let ascending = numbers.sort((a, b) => {
+let ascending = [...numbers].sort((a, b) => {
   return a - b 
 }
 )
@@ -78,11 +78,11 @@ console.log(descending);
 console.log(strings.pop());
 
 // - Find largest number in numbers
- let largest = numbers.sort((a, b) => a - b).pop()
+ let largest = [...numbers].sort((a, b) => a - b).pop()
 console.log(largest);
 // - Find longest string in strings
 // Firstly short the Array , then find the last one by pop
-let longestString = strings.sort((a, b) => a.length - b.length).pop()
+let longestString = [...strings].sort((a, b) => a.length - b.length).pop()
 console.log(longestString)
 
 // - Find all the even numbers
@@ -97,21 +97,33 @@ num % 2 === !0
 )
 console.log(oddNum)
 
-
 // - Place a new word at the start of the array use (unshift)
 strings.unshift("Aditi");
 console.log(strings)
 
 // - Make a subset of numbers array [18,9,7,11]
-
+console.log(numbers.slice(3,7));
 
 // - Make a subset of strings array ['a','collection']
-
-
+console.log(strings.slice(2,5));
 
 // - Replace 12 & 18 with 1221 and 1881
 
+//numbers.splice(numbers.indexOf(12),1,1221);
+//numbers.splice(numbers.indexOf(18),1,1881);
 
+//Better Approach
+console.log(
+  numbers.map((num) => {
+if(num === 12){
+  return 1221;
+} else if(num === 18){
+  return 1881;
+}else {
+  return num;
+}
+})
+);
 // - Replace words in strings array with the length of the word
  
 
