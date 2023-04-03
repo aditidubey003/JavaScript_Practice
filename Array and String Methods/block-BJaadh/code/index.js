@@ -125,12 +125,21 @@ if(num === 12){
 })
 );
 // - Replace words in strings array with the length of the word
- 
+ let myLength = console.log(strings.map((string) => string.length), "mylength");
 
 
 // - Find the sum of the length of words using above question
+/*let sum = myLength.forEach(element => {
+  sum = 0;
+  return sum += element;
+});
+console.log(sum);*/
 
-
+/*myLength.reduce((acc, cv) =>{
+  acc = acc + cv
+  return acc;
+},0);
+*/
 
 // - Customers Array
 var customers = [
@@ -140,22 +149,42 @@ var customers = [
   { firstname: 'Jack', lastname: 'White' },
 ];
 // - Find all customers whose firstname starts with 'J'
-
+let filteredCustomer = customers.filter((customer) => 
+  customer.firstname.startsWith('J')
+)
 
 
 // - Create new array with only first name
-
+// We have used Map because we need to get the same length of output, and every onject contains firstname.
+let customerFirstname = customers.map((customer) =>
+ customer.firstname
+)
+console.log(customerFirstname)
 
 
 // - Create new array with all the full names (ex: "Joe Blogs")
-
-
+let customerFullname = customers.map((customer) =>
+ `${customer.firstname} ${customer.lastname}`
+)
+console.log(customerFullname)
 
 // - Sort the array created above alphabetically
 
+// [...customerFullname].sort();
 
 
 // - Create a new array that contains only user who has at least one vowel in the firstname.
- 
-
-
+ let filterVowel = customers.filter((customer) =>{
+  if(customer.firstname.toLowerCase().includes('a') ||
+  customer.firstname.toLowerCase().includes('e') ||
+  customer.firstname.toLowerCase().includes('i') ||
+  customer.firstname.toLowerCase().includes('o') ||
+  customer.firstname.toLowerCase().includes('u') 
+  ){
+   return true;
+  } else{
+   return false;
+  }
+ }
+ )
+ console.log(filterVowel)
