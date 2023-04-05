@@ -84,11 +84,11 @@ function notEndingWithVowel (string){
 }
 
 let noVowelAtEnd = words.filter((w) => notEndingWithVowel(w))
-console.log(noVowelAtEnd, 'uuu');
+console.log(noVowelAtEnd);
 
 // Better Approach 
 let noVowelAtEnd1 = words.filter((w) => noVowel(w[w.length -1]))
-console.log(noVowelAtEnd1, 'yyy');
+console.log(noVowelAtEnd1);
 
 
 
@@ -124,21 +124,32 @@ let odd = numbers.filter((num) => num % 2 !== 0)
 console.log(odd);
 
 // - Create a new array that should have true for even number and false for odd numbers.
-
-
+// Here we are using Map because we need the same length of the output.
+let result = numbers.map((num) => num % 2 === 0)
+console.log(result);
 // - Sort the above number in assending order.
-
-
+let sortedArray = [...numbers].sort((a, b) => a - b )
+console.log(sortedArray);
 
 // - Does sort mutate the original array?
 
 //Yes
 
 // - Find the sum of the numbers in the array.
-
-
+let totalSum = numbers.reduce((acc, cv) => {
+  acc += cv
+  return acc;
+}, 0)
+console.log(totalSum);
 
 //- Write a function averageNumbers that receives an array of numbers and calculate the average of the numbers
+function averageNumbers (arr){
+return arr.reduce((acc, cv) => {
+  acc += cv
+return acc 
+}, 0)/ arr.length
+} 
+ averageNumbers(numbers)
 
 
 let strings = [
@@ -156,3 +167,15 @@ let strings = [
 
 // - Write a function averageWordLength that receives an array of words2 and calculate the average length of the words.
 
+function averageWordLength (words){
+return (
+  words
+  .map((w) => w.length)
+  .reduce((acc, cv) => {
+  return acc + cv
+},0)/ words.length)
+}
+
+// Testing
+averageWordLength(numbers)
+averageWordLength(strings)
