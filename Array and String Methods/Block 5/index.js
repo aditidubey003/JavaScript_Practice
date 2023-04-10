@@ -45,18 +45,84 @@ console.log(truncate('John Snow', 4)); // "John";
 console.log(truncate('Baby Elephant', 7)); // "BabyEle";
 
 // Write a function to convert a string name in abbreviated form
+/*function abbrevName (string){
+var method = string.trim().split(' ');
+if (method.length > 1){
+    return (method[0] + " " + method[1].charAt(0) + ".");
+}
+return method[0];
+}
+*/
 
+// Another method
+/*function abbrevName (val){
+ let arr = val.split('')
+ return `${arr[0]}  ${arr[1][0]}.`;
+}
+*/
+
+function abbrevName (val){
+ let words = val.split(' ')
+ let first = words[0]
+ let last = words[1].charAt(0)
+  return first + ' ' + last + " ."
+}
+// Test
+console.log(abbrevName('Robin Singh')); //"Robin S."
+console.log(abbrevName('John Snow')); //"John S."
+
+
+
+// Abbreviating a Two Word String
+function hello (string){
+    console.log(
+        string.toUpperCase().split(' ').map((element) => element[0]).join('.')
+    )
+}
+
+// Test
+console.log(hello('Robin Singh')); //"Robin S."
 
 // Test
 console.log(abbrevName('Robin Singh')); //"Robin S."
 console.log(abbrevName('John Snow')); //"John S."
 
-/*
+
 // Write a function to hide email addresses to protect from unauthorized user.
+
+/*function protect (str){
+    let splitted = str.split('@')
+    console.log(splitted)
+    let length = splitted[0].length.pop(3)
+    // console.log(length)
+    
+     return splitted[0].slice(0,length ) + '...'+ '@'+ splitted[1]
+}
+*/
+function protect (email) {
+    var avg, splitted, part1, part2;
+    splitted = email.split("@");
+    part1 = splitted[0];
+    avg = part1.length / 2;
+    part1 = part1.substring(0, (part1.length - avg));
+    part2 = splitted[1];
+    return part1 + "...@" + part2;
+};
 
 // Test
 console.log(protect('johnS@example.com')); // "john...@example.com"
 console.log(protect('arya_stark@example.com')); // "arya...@example.com"
+
+/*function protect (str) {
+    var before = str.split('_');
+    console.log(before)
+    var after = str.split('@');
+    console.log(after)
+    return before[0] + '...' + '@' + after[1];
+}
+*/
+/*
+
 
 
 // Write a function to hide email addresses to protect from unauthorized user. The number of dots should be same as length of left characters.
