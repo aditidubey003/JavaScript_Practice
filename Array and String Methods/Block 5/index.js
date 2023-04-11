@@ -88,18 +88,9 @@ console.log(abbrevName('Robin Singh')); //"Robin S."
 console.log(abbrevName('John Snow')); //"John S."
 
 
-// Write a function to hide email addresses to protect from unauthorized user.
+// Write a function to hide email addresses tolog(protectAgain from unauthorized user.
 
-/*function protect (str){
-    let splitted = str.split('@')
-    console.log(splitted)
-    let length = splitted[0].length.pop(3)
-    // console.log(length)
-    
-     return splitted[0].slice(0,length ) + '...'+ '@'+ splitted[1]
-}
-*/
-function protect (email) {
+function protectAgain (email) {
     var avg, splitted, part1, part2;
     splitted = email.split("@");
     part1 = splitted[0];
@@ -107,51 +98,108 @@ function protect (email) {
     part1 = part1.substring(0, (part1.length - avg));
     part2 = splitted[1];
     return part1 + "...@" + part2;
-};
+}
 
 // Test
-console.log(protect('johnS@example.com')); // "john...@example.com"
-console.log(protect('arya_stark@example.com')); // "arya...@example.com"
+console.log(protectAgain('johnS@example.com')); // "john...@example.com"
+console.log(protectAgain('arya_stark@example.com')); // "arya...@example.com"
 
-/*function protect (str) {
+// Another Method 
+/*functionlog(protectAgain (str) {
     var before = str.split('_');
     console.log(before)
     var after = str.split('@');
     console.log(after)
     return before[0] + '...' + '@' + after[1];
 }
+
+// Another Method By Slice
+
+functionlog(protectAgain (str){
+    let splitted = str.split('@')
+    console.log(splitted)
+    let length = splitted[0].length.pop(3)
+    // console.log(length)
+    
+     return splitted[0].slice(0,4 ) + '...'+ '@'+ splitted[1]
+}
+
 */
-/*
 
 
 
-// Write a function to hide email addresses to protect from unauthorized user. The number of dots should be same as length of left characters.
 
-// Test
-console.log(protect('johnS@example.com')); // "john.@example.com"
-console.log(protect('arya_stark@example.com')); // "arya......@example.com"
+
+
+
+
 
 // Write a function to parameterize a string.
-
+function parameterize (string){
+    return string.split(' ').join('-')
+}
 
 // Test
 console.log(parameterize('John Snow from Winterfell')); // "john-snow-from-winterfell"
 console.log(parameterize('Arya Stark from Winterfell')); // "arya-stark-from-winterfell"
 
+
+
+
+
+
+
+
+
 // Write a function to capitalize the first letter of a string.
+
+function capitalizeFirst(val) {
+    function capitalize(word) {
+      let arr = word.split('');
+      arr[0] = arr[0].toUpperCase();
+      return arr.join('');
+    }
+    let words = val.split(' ');
+    words[0] = capitalize(words[0]);
+    return words.join(' ');
+  }
+
+
+
+
+/*function capitalizeFirst (string){
+    let split = string.split(' ');
+    // console.log(split)
+    let first = split[0].charAt(0).toUpperCase();
+    // console.log(first)
+   return first + " " + split[1] + " "+ split[2]
+}
+*/
+
+
 
 // Test
 console.log(capitalizeFirst('we are learning')); // "We are learning"
 console.log(capitalizeFirst('learning Javascript')); // "Learning Javascript"
 
-
+/*
 // Write a function to capitalize the first letter of each word in a string.
+function capitalizeWords (string){
+    let turn = string.split(' ')
+    // console.log(turn)
+  for ( let elements of string){
+console.log(elements[0].toUpperCase())
+  }
+  // let capitalLetter =  turn[0].charAt(0).toUpperCase()
+}
+
+
 
 // Test
 console.log(capitalizeWords('we are learning')); // "We Are Learning"
 console.log(capitalizeWords('learning javascript')); // "Learnign Javascript"
 
-
+/*
 // Write a function that takes a string which has lower and upper case letters as a parameter and converts upper case letters to lower case, and lower case letters to upper case.
 
 // Tets
@@ -217,4 +265,34 @@ console.log(alphabetize('United States')); // 'setatS detinU'
 console.log(alphabetize('Hello World')); // 'dlroW olleH'
 
 
+
+
+// Write a function to hide email addresses tolog(protectAgain from unauthorized user. The number of dots should be same as length of left characters.
+// Concepts not clear
+/*function protectAgain (email) {
+    let splitted = email.split('@')
+     console.log(splitted)
+     let first = splitted[0]
+     let dotLength = first.length - 4
+     first = splitted[0].slice(0, 4).padEnd(dotLength, '.')
+     console.log(first)
+     last = splitted[1]
+     return first + last
+}
 */
+
+/*function protectAgain(val) {
+    let arr = val.split('@');
+    let dotLength = arr[0].length - 4;
+    let start = arr[0].slice(0, 4).padEnd(dotLength, '.');
+    let end = `@${arr[1]}`;
+  
+    return start + end;
+  }*/
+
+// Test
+// console.log(protectAgain('johnS@example.com')); // "john.@example.com"
+// console.log(protectAgain('arya_stark@example.com')); // "arya......@example.com"
+
+
+//*/

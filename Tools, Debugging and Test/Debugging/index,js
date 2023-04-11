@@ -1,0 +1,16 @@
+// Use console.time to find the time taken by the execution of the code below.
+
+console.time("timeTaken")
+for (let i = 0; i < 1000000000; i++) {
+    //
+}
+console.timeEnd("timeTaken")
+
+// timeTaken: 1112.025146484375 ms
+
+// Use console.log with the %c placeholder to change the font size to 30px, color to tomato and background to black.
+
+console.log("Hello %cAditi", "font-size : 30px; color : tomato; background-color: black" )
+
+// Use console.dir to display the object representation of a function
+
