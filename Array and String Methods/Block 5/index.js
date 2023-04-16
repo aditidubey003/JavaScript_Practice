@@ -166,8 +166,8 @@ function capitalizeFirst(val) {
 
 
 
-
-/*function capitalizeFirst (string){
+/*
+function capitalizeFirst (string){
     let split = string.split(' ');
     // console.log(split)
     let first = split[0].charAt(0).toUpperCase();
@@ -182,16 +182,19 @@ function capitalizeFirst(val) {
 console.log(capitalizeFirst('we are learning')); // "We are learning"
 console.log(capitalizeFirst('learning Javascript')); // "Learning Javascript"
 
-/*
+
 // Write a function to capitalize the first letter of each word in a string.
-function capitalizeWords (string){
-    let turn = string.split(' ')
-    // console.log(turn)
-  for ( let elements of string){
-console.log(elements[0].toUpperCase())
-  }
-  // let capitalLetter =  turn[0].charAt(0).toUpperCase()
+
+function capitalizeWords (val){
+    function capitalize(word){
+        let arr = word.split('')
+        arr[0] = arr[0].toUpperCase()
+        return arr.join('')
+    }
+    return val.split(' ').map(capitalize).join(' ');
 }
+
+  
 
 
 
@@ -199,13 +202,23 @@ console.log(elements[0].toUpperCase())
 console.log(capitalizeWords('we are learning')); // "We Are Learning"
 console.log(capitalizeWords('learning javascript')); // "Learnign Javascript"
 
-/*
+
+
+
+
 // Write a function that takes a string which has lower and upper case letters as a parameter and converts upper case letters to lower case, and lower case letters to upper case.
+
+
+
+
 
 // Tets
 console.log(swapcase('AaBbc')); // "aAbBC"
 console.log(swapcase('abcDef')); // "ABCdEF"
 
+
+
+/*
 // Write a function to convert a string into camel case.
 
 console.log(camelize('hello world')); // "helloWorld"
