@@ -207,9 +207,7 @@ console.log(swapcase('abcDef')); // "ABCdEF"
 
 // Write a function to convert a string into camel case.
 
-function camelize (val){
-    
-}
+function camelize (val){}
 
 
 
@@ -235,6 +233,8 @@ console.log(uncamelize('learningJavaScriptAgain', '_')); // "learning_java_scrip
 
 
 // Write a function to concatenates a given string n times (default is 1).
+
+
 
 // Test
 console.log(repeat('Ha!', 3)); // "Ha!Ha!Ha!"
