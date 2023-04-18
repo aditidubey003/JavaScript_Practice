@@ -127,13 +127,6 @@ functionlog(protectAgain (str){
 */
 
 
-
-
-
-
-
-
-
 // Write a function to parameterize a string.
 function parameterize (string){
     return string.split(' ').join('-')
@@ -142,11 +135,6 @@ function parameterize (string){
 // Test
 console.log(parameterize('John Snow from Winterfell')); // "john-snow-from-winterfell"
 console.log(parameterize('Arya Stark from Winterfell')); // "arya-stark-from-winterfell"
-
-
-
-
-
 
 
 
@@ -164,8 +152,6 @@ function capitalizeFirst(val) {
     return words.join(' ');
   }
 
-
-
 /*
 function capitalizeFirst (string){
     let split = string.split(' ');
@@ -175,8 +161,6 @@ function capitalizeFirst (string){
    return first + " " + split[1] + " "+ split[2]
 }
 */
-
-
 
 // Test
 console.log(capitalizeFirst('we are learning')); // "We are learning"
@@ -195,22 +179,24 @@ function capitalizeWords (val){
 }
 
   
-
-
-
 // Test
 console.log(capitalizeWords('we are learning')); // "We Are Learning"
 console.log(capitalizeWords('learning javascript')); // "Learnign Javascript"
 
 
-
-
-
 // Write a function that takes a string which has lower and upper case letters as a parameter and converts upper case letters to lower case, and lower case letters to upper case.
 
 
-
-
+function swapcase(val){
+    let arr = val.split(' ').map((letter) => {
+        if(letter.toUpperCase() === letter){
+            return letter.toLowerCase()
+        } else{
+            return letter.toUpperCase()
+        }
+       });
+    return arr.join(' ')
+}
 
 // Tets
 console.log(swapcase('AaBbc')); // "aAbBC"
@@ -218,12 +204,27 @@ console.log(swapcase('abcDef')); // "ABCdEF"
 
 
 
-/*
+
 // Write a function to convert a string into camel case.
 
+function camelize (val){
+    
+}
+
+
+
+
+
+// Test
 console.log(camelize('hello world')); // "helloWorld"
 console.log(camelize('main exercise')); // "mainExercise"
 
+
+
+
+
+
+/*
 // Write a function to uncamelize a string (output should be all in lowercase)
 
 // Tets
