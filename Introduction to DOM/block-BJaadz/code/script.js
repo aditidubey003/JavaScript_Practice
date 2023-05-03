@@ -9,7 +9,7 @@ heading.style.color = 'Black';
 
 // Select all the hr elements and store it in a variable named allHrs using querySelectorAll
 let allHrs = document.querySelectorAll('hr')
-
+console.log(allHrs);
 /* 
 Convert the NodeList returned by querySelectorAll to Array using Array.from() or spread operator and store it in allHrsArray
 
@@ -18,45 +18,57 @@ Array.from converts an array kind of data into array so we can use methods like 
 HINT:
 let allHrsArray = Array.from(allHrs)
 */
-
+let allHrsArray = Array.from(allHrs)
+console.log(allHrsArray);
 
 // Set the border of the all the hr elements to "1px solid tomato"
-
+allHrsArray.forEach((elm) => elm.style.border  = ' 1px Solid tomato')
 
 
 // Change the background of all the hr to "antiquewhite" using for of loop.
+for(let hr of allHrsArray){
+  hr.style.backgroundColor = "antiquewhite"
+}
+
 
 // Change the 'border-radius' of all the hr to "5px" using array.
-
+allHrs.forEach((elm) => elm.style.borderRadius = "5px")
 
 
 // Change the alignment of the heading(h1) to center.
 
+heading.style.textAlign = 'center'
+
 // Change the font size of the heading to 3rem.
 
+heading.style.fontSize = "3rem";
 
 
 // Change the border of hr with class 'image' to `2px solid purple`
+// First choose all the hr with class image, then use forEaxh for selecting all elements.
 
-
+document.querySelectorAll('hr.image').forEach((elm) => elm.style.border = '2px solid purple')
 // Hide the box number 17 (last box).
+// To hide the box we will use display: none
 
+document.querySelector('.seventeen').style.display = 'none';
 
 // Change the border of all the hr element from solid to dashed type
-
+allHrsArray.forEach((elm) => elm.style.borderStyle = 'dashed');
 
 // Create a pragraph element and store it in variable named 'para' using `createElement`
-
+let para = document.createElement('p');
 
 // Change the inner text of para to "querySelector returns an element you can maupulate but querySelectorAll returns the collection of elements in array kind of structure."
-
+para.innerText = "querySelector returns an element you can maupulate but querySelectorAll returns the collection of elements in array kind of structure."
+console.log(para);
 
 // Remove all the elements from box 1
-
-
+let box1 = document.querySelector('.one')
+box1.innerHTML = "";
 
 // Replace all the elements inside box 1 with the para (you created above)
-
+box1.append(para);
 
 
 /* Walking the DOM
@@ -76,7 +88,6 @@ Do the following after selecting box 16 and storing in variable named box16
 
   - Focus on the difference between element and node
 */
-
 
 
 // Select box 2 and append a new paragraph element with content "Append inserts as last child" just after hr element.
